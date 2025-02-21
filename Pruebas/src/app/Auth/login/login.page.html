@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if(loginForm.value){
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="password" value="NeverGonnaGiveYouUp">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+  
+      <ion-button type="submit" fill="outline" [disabled]="!loginForm.valid">
+        Ingresar
+      </ion-button>
+
+      <ion-button fill="outline" (click)="navigateToRegister()" [disabled]="!userExists">
+        Registrarse
+      </ion-button>
+    </form>
+  }
+  
+</ion-content>
+

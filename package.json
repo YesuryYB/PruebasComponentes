@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@ionic/angular": "^8.4.3",
+    "ionicons": "^7.4.0"
+  }
+}
